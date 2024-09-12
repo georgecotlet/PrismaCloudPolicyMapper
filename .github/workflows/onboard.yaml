@@ -1,0 +1,33 @@
+name: Trigger a container registry scan
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # every day at 3AM
+  workflow_dispatch: # on button click
+
+env:
+  GITHUB_TOKEN: ${{ secrets.MY_GITHUB_PAT }}
+  PRISMA_API_URL: ${{ secrets.PRISMA_API_URL }}
+  PRISMA_ACCESS_KEY: ${{ secrets.PRISMA_ACCESS_KEY }}
+  PRISMA_SECRET_KEY: ${{ secrets.PRISMA_SECRET_KEY }}
+
+jobs:
+  sync:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: List all container registries
+        run: |
+          python main.py --organization PaloAltoNetworks --ghcr-token-name github_personal_access_token --limit 3

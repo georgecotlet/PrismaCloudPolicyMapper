@@ -1,0 +1,2 @@
+policy_name,labels,compliance_framework,compliance_requirement,compliance_section,status
+"Azure Microsoft Defender for Cloud is set to Off for Key Vault","MyNewLabel","smelotte-python","First Req","ID001",true

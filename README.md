@@ -96,22 +96,5 @@ policy_name,labels,compliance_framework,compliance_requirement,compliance_sectio
 Run the script as follows:
 
 ```bash
-python policy_updater.py
-```
-
-#### Example .env File
-```readme
-# Prisma Cloud API Credentials
-PRISMA_API_URL=<your_prisma_cloud_api_url>
-PRISMA_ACCESS_KEY=<your_prisma_access_key>
-PRISMA_SECRET_KEY=<your_prisma_secret_key>
-
-# AWS SES Credentials
-AWS_DEFAULT_REGION=<your_aws_region>  # e.g., us-east-1
-AWS_ACCESS_KEY_ID=<your_aws_access_key_id>
-AWS_SECRET_ACCESS_KEY=<your_aws_secret_access_key>
-
-# Email Settings
-SENDER_EMAIL=<your_sender_email>
-RECIPIENT_EMAIL=<recipient_email_address>
+python policy_updater.py --debug
 ```

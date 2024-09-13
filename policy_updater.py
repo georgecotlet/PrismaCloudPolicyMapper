@@ -374,11 +374,10 @@ def login_compute(base_url, access_key, secret_key):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-a", "--amount", help="The number of unit to generate the report.", default=1)
-    parser.add_argument("-l", "--limit", help="Number of maximum email send", default=0)
     parser.add_argument("--debug", action="store_true", help="Enable debug logging.")
     args = parser.parse_args()
 
+    input_csv_file = 'matched_policies.csv'    
     if args.debug:
         logging_level = logging.DEBUG
     else:
@@ -402,27 +401,21 @@ def main():
     url = os.environ.get("PRISMA_API_URL")
     identity = os.environ.get("PRISMA_ACCESS_KEY")
     secret = os.environ.get("PRISMA_SECRET_KEY")
-    limit = args.limit
 
     if not url or not identity or not secret:
-        logger.error("PRISMA_API_URL, PRISMA_ACCESS_KEY, PRISMA_SECRET_KEY, GITHUB_TOKEN variables are not set.")
+        logger.error("PRISMA_API_URL, PRISMA_ACCESS_KEY, PRISMA_SECRET_KEY variables are not set.")
         return
 
     token = login_saas(url, identity, secret)
-    compute_url = get_compute_url(url, token)
-    compute_token = login_compute(compute_url, identity, secret)
-    logger.debug(f"Compute url: {compute_url}")
+    # compute_url = get_compute_url(url, token)
+    # compute_token = login_compute(compute_url, identity, secret)
+    # logger.debug(f"Compute url: {compute_url}")
 
     if token is None:
         logger.error("Unable to authenticate.")
-        return
+        return    
     
-    try:
-        limit = int(limit)  # Convert limit to an integer
-    except ValueError:
-        raise ValueError("Limit must be a valid integer.")
-    
-    update_policy_from_csv(url, token, "matched_policies.csv")
+    update_policy_from_csv(url, token, input_csv_file)
     
 
     logger.info("======================= END =======================")

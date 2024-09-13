@@ -135,7 +135,6 @@ def login_saas(base_url, access_key, secret_key):
     return response.json().get("token")
 
 def main():   
-
     load_dotenv()
     
     # File paths

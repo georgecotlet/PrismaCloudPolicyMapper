@@ -1,9 +1,11 @@
-name: Trigger a container registry scan
+name: Update the Prisma Cloud policies 
 
 on:
-  # schedule:
-  #   - cron: '0 3 * * *' # every day at 3AM
   workflow_dispatch: # on button click
+  # pull_request:
+  # push:
+  #   branches:
+  #     - main
 
 env:
   PRISMA_API_URL: ${{ secrets.PRISMA_API_URL }}
@@ -29,4 +31,4 @@ jobs:
 
       - name: 
         run: |
-          python policy_mapper.py --debug
+          python policy_updater.py --debug

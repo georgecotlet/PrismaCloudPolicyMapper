@@ -1,9 +1,14 @@
-name: Trigger a container registry scan
+name: Send an email with updated policies
 
 on:
   # schedule:
   #   - cron: '0 3 * * *' # every day at 3AM
   workflow_dispatch: # on button click
+    inputs:
+      HOURS:
+        description: 'Last hours'
+        required: true
+        default: '24'
 
 env:
   PRISMA_API_URL: ${{ secrets.PRISMA_API_URL }}
@@ -36,4 +41,4 @@ jobs:
 
       - name: 
         run: |
-          python alert_policy_update.py --hours 24
+          python alert_policy_update.py --hours ${{ github.event.inputs.HOURS }}

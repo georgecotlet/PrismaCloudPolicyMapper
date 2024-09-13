@@ -200,7 +200,7 @@ def main():
     sender_email = os.getenv("SENDER_EMAIL")
     recipient_email = os.getenv("RECIPIENT_EMAIL")
 
-    if not base_url or not token or not secret or not sender_email or not recipient_email:
+    if not base_url or not token or not secret or not sender_email or not recipient_email or not aws_region or not aws_access_key_id or not aws_secret_access_key:
         logger.error("Environment variables for Prisma Cloud or AWS SES are missing.")
         return
 

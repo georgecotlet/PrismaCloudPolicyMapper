@@ -1,12 +1,20 @@
+import requests
 import json
 import csv
+import os
+from dotenv import load_dotenv
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import logging
 
 # Set up logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+console_handler = logging.StreamHandler()
+logger.addHandler(console_handler)
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Compliance requirements and sections
 compliance_mapping = {
@@ -97,14 +105,57 @@ def write_to_csv(compliance_data, output_file):
         for row in compliance_data:
             writer.writerow(row)
 
-def main():
+# Function to fetch policies
+def get_policies(base_url, token):
+    url = f"https://{base_url}/v2/policy"
+    headers = {"content-type": "application/json; charset=UTF-8", "x-redlock-auth": token}
+   
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()  # Raises a HTTPError if the status is 4xx, 5xx
+    except requests.exceptions.RequestException as err:
+        logger.error(f"Exception in get_policies: {err}")
+        return None
+
+    response_json = response.json()
+    return response_json
+
+
+def login_saas(base_url, access_key, secret_key):
+    url = f"https://{base_url}/login"
+    payload = json.dumps({"username": access_key, "password": secret_key})
+    headers = {"content-type": "application/json; charset=UTF-8"}
+    try:
+        response = requests.post(url, headers=headers, data=payload)
+        response.raise_for_status()  # Raises a HTTPError if the status is 4xx, 5xx
+    except Exception as e:
+        logger.info(f"Error in login_saas: {e}")
+        return None
+
+    return response.json().get("token")
+
+def main():   
+
+    load_dotenv()
+    
     # File paths
-    prisma_json_file = 'policies.json'
     framework_csv_file = 'fsbp.csv'
-    output_csv_file = 'matched_policies.csv'
+    output_csv_file = 'matched_policies.csv'    
+    
+    # Load environment variables
+    base_url = os.getenv("PRISMA_API_URL")
+    token = os.getenv("PRISMA_ACCESS_KEY")
+    secret = os.getenv("PRISMA_SECRET_KEY")
+
+    if not base_url or not token or not secret:
+        logger.error("Environment variables for Prisma Cloud or AWS SES are missing.")
+        return
+
+    # Fetch policies
+    token = login_saas(base_url, token, secret)
+    prisma_policies = get_policies(base_url, token)
     
     # Load policies
-    prisma_policies = load_prisma_policies(prisma_json_file)
     framework_policies = load_framework_policies(framework_csv_file)
     
     # Perform fuzzy matching

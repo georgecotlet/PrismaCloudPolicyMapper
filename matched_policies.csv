@@ -1,0 +1,227 @@
+policy_name,labels,compliance_framework,compliance_requirement,compliance_section,status
+"EFS Access Points are not enforcing a root directory","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS Certificate Manager (ACM) RSA certificate key length less than 2048","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS account security contact information is not set","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS API Gateway REST API execution logging disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"API Gateway does not have X-Ray tracing enabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"Public API gateway not configured with AWS Web Application Firewall v2 (AWS WAFv2)","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS API Gateway REST API not configured with AWS Web Application Firewall v2 (AWS WAFv2)","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS API Gateway V2 has Access Logging is disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS API Gateway caching is disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"API Gateway method setting is not set to encrypted caching","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS API Gateway method settings do not enable caching","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS API gateway request authorisation is not set","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS AppSync has field-level logging disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS AppSync GraphQL API is authenticated with API key","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"Auto scaling groups associated with a load balancer do not use elastic load balancing health checks","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS Classic Load Balancer not configured to span multiple Availability Zones","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS EC2 instance not configured with Instance Metadata Service v2 (IMDSv2)","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS Auto Scaling group launch configuration not configured with Instance Metadata Service v2 (IMDSv2)","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS Auto Scaling group launch configuration has public IP address assignment enabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"EC2 Auto Scaling groups are not utilizing EC2 launch templates","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS replicated backups are not encrypted at rest by Key Management Service (KMS) using a Customer Managed Key (CMK)","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS CloudFront distributions does not have a default root object configured","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS CloudFront origin protocol policy does not enforce HTTPS-only","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS CloudFront response header policy does not enforce Strict Transport Security","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS CloudFront web distribution with AWS Web Application Firewall (AWS WAF) service disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS CloudFront distribution is using insecure SSL protocols for HTTPS communication","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS CloudFront not configured with AWS Web Application Firewall v2 (AWS WAFv2)","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS CloudFront web distribution using insecure TLS version","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS CloudFront distribution with access logging disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"CloudFront distributions do not have origin failover configured","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS CloudFront web distribution with default SSL certificate","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS Cloudfront Distribution with S3 have Origin Access set to disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS CloudTrail is not enabled on the account","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"EKS clusters are not running on a supported Kubernetes version","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"ECS task definitions have their own unique process namespace or share the host's process namespace","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Workspace root volumes are not encrypted","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Systems Manager EC2 instance having NON_COMPLIANT patch compliance status","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Neptune cluster deletion protection is disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","API protection",true
+"AWS RDS Postgres Cluster does not have query logging enabled","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"EFS Access Points are not enforcing a root directory","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Amazon Redshift clusters do not have automatic snapshots enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"DocDB Global Cluster is not encrypted at rest","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Azure Network Security Group allows all traffic on CIFS (UDP Port 445)","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"RDS database does not have IAM authentication enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS SageMaker notebook instance with root access enabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS ECS task definition is not configured with read-only access to container root filesystems","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS ECS task definition logging configuration disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS CloudFront web distribution with default SSL certificate","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"AWS Step Function state machines logging disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS Redshift cluster instance with public access setting enabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS CloudFront distributions does not have a default root object configured","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS ElastiCache Redis cluster automatic version upgrade disabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Amazon Redshift clusters do not have automatic snapshots enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Elasticsearch does not have node-to-node encryption enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Network firewalls do not have deletion protection enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"User identity should be enforced by EFS access points","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Classic Load Balancer not configured to span multiple Availability Zones","FSBP","AWS Foundational Security Best Practices standard","Recover","Resilience",true
+"AWS Macie is not enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS ECR private repository tag mutable","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS Application Load Balancer (ALB) is not configured to drop HTTP headers","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"An S3 bucket must have a lifecycle configuration","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Amazon Redshift clusters do not have automatic snapshots enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS OpenSearch Fine-grained access control is disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS ElastiCache Redis cluster is not configured with automatic backup","FSBP","AWS Foundational Security Best Practices standard","Recover","Resilience",true
+"AWS Lambda Function with IAM wildcard resource access","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"CloudFront distributions do not have origin failover configured","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS EMR cluster is not enabled with data encryption at rest","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"API Gateway does not have access logging enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"CloudFront distributions do not have origin failover configured","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS OpenSearch domain does not have the latest service software version","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS DMS replication task for the source database have logging not set to the minimum severity level","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Elasticsearch domains are not configured with a minimum of three dedicated master nodes","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"ElastiCache cluster is using the default subnet group","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Elasticsearch domain logging is not enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Redshift clusters are not using the default database name.","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS WAF Rule Group CloudWatch metrics disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS Elasticsearch domain Encryption for data at rest is disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"AWS all data stored in the Elasticsearch domain is not encrypted using a Customer Managed Key (CMK)","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS EventBridge event bus with no resource-based policy attached","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS DocumentDB cluster does not publish audit logs to CloudWatch Logs","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"AWS Certificate Manager (ACM) RSA certificate key length less than 2048","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS DocumentDB clusters have backup retention period less than 7 days","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS ElastiCache Redis with in-transit encryption disabled (Non-replication group)","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"AWS CloudTrail trail logs is not integrated with CloudWatch Log","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"RDS database does not have IAM authentication enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Dynamodb point in time recovery is not enabled for global tables","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"EC2 Auto Scaling groups are not utilizing EC2 launch templates","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Transit Gateway auto accept vpc attachment is enabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS SSM documents are public","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS Systems Manager EC2 instance having NON_COMPLIANT patch compliance status","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS ElastiCache Redis cluster with in-transit encryption disabled (Replication group)","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"Not only encrypted EBS volumes are attached to EC2 instances","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS CloudTrail is not enabled with multi trail and not capturing all management events","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"RDS cluster is not configured to copy tags to snapshots","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"RDS cluster is not configured to copy tags to snapshots","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"GCP SQL server instance database flag user options is set","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"OCI security group allows unrestricted ingress access to port 22","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"AWS EC2 instance not configured with Instance Metadata Service v2 (IMDSv2)","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"Container is privileged","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Backup Vault is not encrypted at rest using KMS CMK","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Amazon Redshift clusters do not have automatic snapshots enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Secrets Manager secret not configured to rotate within 90 days","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS RDS cluster not configured with IAM authentication","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"CodeBuild projects are not encrypted","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Redshift clusters are not using enhanced VPC routing","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS IAM user has two active Access Keys","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure development",true
+"GCP Kubernetes cluster Application-layer Secrets not encrypted","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"Amazon EMR clusters' security groups are open to the world","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Private CA root certificate authority is enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Neptune snapshot is encrypted by KMS using a customer managed Key (CMK)","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Dockerfile APK package manager is configured to allow untrusted repositories","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Elasticsearch domain logging is not enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS S3 Buckets has block public access setting disabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Auto Scaling group launch configuration not configured with Instance Metadata Service v2 (IMDSv2)","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"CloudFront distributions do not have origin failover configured","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS EKS cluster endpoint access publicly enabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"AWS Redshift database does not have audit logging enabled","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"AWS Elastic File System (EFS) with encryption for data at rest is disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"AWS Secrets Manager secret configured with automatic rotation not rotated as scheduled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS S3 Bucket Policy allows public access to CloudTrail logs","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"CloudFront distributions do not have origin failover configured","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS OpenSearch node-to-node encryption is disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"AWS CloudTrail log validation is not enabled in all regions","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"Amazon Redshift clusters do not have automatic snapshots enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"API Gateway does not have X-Ray tracing enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS account security contact information is not set","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"Amazon Redshift clusters do not have automatic snapshots enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Secrets Manager secret not used for more than 90 days","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Application Load Balancer (ALB) is not configured to drop HTTP headers","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS MSK cluster encryption in transit is not enabled","FSBP","AWS Foundational Security Best Practices standard","Protect","API protection",true
+"AWS SageMaker notebook instance configured with direct internet access feature","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS RDS instance without Automatic Backup setting","FSBP","AWS Foundational Security Best Practices standard","Recover","Resilience",true
+"AWS Classic Load Balancer not configured to span multiple Availability Zones","FSBP","AWS Foundational Security Best Practices standard","Recover","Resilience",true
+"OCI Default Security List of every VCN allows all traffic on SSH port (22)","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"AWS FSx for OpenZFS file systems not configured to copy tags to backups or volumes","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"S3 Bucket does not have public access blocks","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Appsync API Cache is not encrypted at rest","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"ALB is not configured with the defensive or strictest desync mitigation mode","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"GCP Storage Bucket does not have Access and Storage Logging enabled","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"RDS database does not have IAM authentication enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"DocDB Global Cluster is not encrypted at rest","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Web Application Firewall (AWS WAF) Classic logging is disabled","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"AWS DocumentDB cluster deletion protection is disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","API protection",true
+"AWS NACL allows ingress from 0.0.0.0/0 to port 3389","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Azure AKS cluster nodes have public IP addresses","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Aurora MySQL DB cluster does not publish audit logs to CloudWatch Logs","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"Clusters of Neptune DB do not replicate tags to snapshots","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS API Gateway REST API execution logging disabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Network Load Balancer (NLB) is not using the latest predefined security policy","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure development",true
+"AWS EMR Block public access setting disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS DMS replication instance automatic version upgrade disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"ALB is not configured with the defensive or strictest desync mitigation mode","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS CodeBuild project environment variables contain plaintext AWS credentials","FSBP","AWS Foundational Security Best Practices standard","Detect","Detection services",true
+"AWS OpenSearch domain does not have the latest service software version","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"CodeBuild S3 logs are not encrypted","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Elastic load balancers do not use SSL Certificates provided by AWS Certificate Manager","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Route53 public Hosted Zone query logging is not enabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS ElastiCache Redis with in-transit encryption disabled (Non-replication group)","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"AWS GuardDuty detector is not enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Opensearch domain audit logging disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS Kinesis Firehose Delivery Streams are not encrypted with CMK","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS ECS cluster with container insights feature disabled","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"Elastic Beanstalk environments do not have enhanced health reporting enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS FSx for OpenZFS file systems not configured to copy tags to backups or volumes","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS CloudFront distribution is using insecure SSL protocols for HTTPS communication","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"Amazon Redshift clusters do not have automatic snapshots enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS ElastiCache Redis cluster automatic version upgrade disabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS RDS Event subscription All event categories and All instances disabled for DB instance","FSBP","AWS Foundational Security Best Practices standard","Detect","Detection services",true
+"AWS Cloudfront Distribution with S3 have Origin Access set to disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"BigQuery tables do not have deletion protection enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Elastic Load Balancer (Classic) with cross-zone load balancing disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"Authorization type for API GatewayV2 routes is not specified","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Classic Load Balancer not configured to span multiple Availability Zones","FSBP","AWS Foundational Security Best Practices standard","Recover","Resilience",true
+"AWS RDS instance with Multi-Availability Zone disabled","FSBP","AWS Foundational Security Best Practices standard","Recover","Resilience",true
+"AWS Amazon RDS instances Enhanced Monitoring is disabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"RDS Aurora Clusters do not have backtracking enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS S3 access point Block public access setting disabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"GCP SQL Instance with public IP address does not have authorized network configured","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS RDS instance not configured with IAM authentication","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS CodeBuild project not configured with logging configuration","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Auto scaling groups associated with a load balancer do not use elastic load balancing health checks","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS ECR Repository not configured with a lifecycle policy","FSBP","AWS Foundational Security Best Practices standard","Detect","Detection services",true
+"AWS AppSync GraphQL API is authenticated with API key","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS Auto Scaling group launch configuration has public IP address assignment enabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS RDS cluster delete protection is disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"AWS IAM policy attached to users","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS S3 Buckets Block public access setting disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"CloudFront distributions do not have origin failover configured","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"RDS instances do not have Multi-AZ enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS DMS replication instance automatic version upgrade disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS Elasticsearch domain publicly accessible","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"RDS cluster is not configured to copy tags to snapshots","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Web Application Firewall (AWS WAF) Classic logging is disabled","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"AWS Elastic Beanstalk environment managed platform updates are not enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS VPC subnets should not allow automatic public IP assignment","FSBP","AWS Foundational Security Best Practices standard","Protect","Protective services",true
+"AWS Elasticsearch domain has Index slow logs set to disabled","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"AWS MFA not enabled for IAM users","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS Neptune DB cluster does not publish audit logs to CloudWatch Logs","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"AWS Secret Manager Automatic Key Rotation is not enabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure development",true
+"Workspace user volumes are not encrypted","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Classic Load Balancer not configured to span multiple Availability Zones","FSBP","AWS Foundational Security Best Practices standard","Recover","Resilience",true
+"Big Table Instances do not have deletion protection enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS Kinesis Firehose's delivery stream is not encrypted","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"ECS Fargate services are not ensured to run on the latest Fargate platform version","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"GCP User managed service account keys are not rotated for 90 days","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"Public API gateway not configured with AWS Web Application Firewall v2 (AWS WAFv2)","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS EC2 Client VPN endpoints client connection logging disabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS Database Migration Service endpoint do not have SSL configured","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"Redshift clusters are not using enhanced VPC routing","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Azure application gateway does not have WAF enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS ECS services have automatic public IP address assignment enabled","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS Elastic Load Balancer with listener TLS/SSL is not configured","FSBP","AWS Foundational Security Best Practices standard","Detect","Detection services",true
+"API Gateway stage does not have logging level defined appropriately","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS IAM policy allows decryption actions on all KMS keys","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"Virtual machine scale sets do not have encryption at host enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS SageMaker notebook instance is not placed in VPC","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure network configuration",true
+"AWS AppSync has field-level logging disabled","FSBP","AWS Foundational Security Best Practices standard","Identify","Logging",true
+"AWS DMS replication task for the target database have logging not set to the minimum severity level","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"Secrets used as environment variables","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"GCP DataFusion does not have stack driver logging enabled","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"AWS IAM policy allows decryption actions on all KMS keys","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"S3 Bucket does not have public access blocks","FSBP","AWS Foundational Security Best Practices standard","Unknown Requirement","Unknown Section",true
+"OCI IAM password policy for local (non-federated) users does not have a symbol","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true
+"AWS Elasticsearch domain publicly accessible","FSBP","AWS Foundational Security Best Practices standard","Protect","Data protection",true
+"AWS RDS event subscription disabled for DB security groups","FSBP","AWS Foundational Security Best Practices standard","Detect","Detection services",true
+"AWS IAM policy allows full administrative privileges","FSBP","AWS Foundational Security Best Practices standard","Protect","Secure access management",true

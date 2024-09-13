@@ -6,7 +6,6 @@ on:
   workflow_dispatch: # on button click
 
 env:
-  GITHUB_TOKEN: ${{ secrets.MY_GITHUB_PAT }}
   PRISMA_API_URL: ${{ secrets.PRISMA_API_URL }}
   PRISMA_ACCESS_KEY: ${{ secrets.PRISMA_ACCESS_KEY }}
   PRISMA_SECRET_KEY: ${{ secrets.PRISMA_SECRET_KEY }}

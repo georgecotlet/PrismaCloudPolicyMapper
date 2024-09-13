@@ -4,3 +4,5 @@ venv
 azure.json
 acr_onboarding.bash
 .env
+policies.json
+PolicyNotInPrisma.md

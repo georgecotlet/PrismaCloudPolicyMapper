@@ -16,18 +16,21 @@ def update_policy_from_csv(base_url, token, csv_file_path):
     # Fetch the existing policies
     policies = get_policies(base_url, token)
     
+    # Define the policy types that are allowed to update compliance metadata
+    allowed_policy_types = ["config", "anomaly", "audit_event"]
+    
     # Read the CSV file and update policies accordingly
     with open(csv_file_path, mode='r') as file:
         csv_reader = csv.DictReader(file)
         
         for row in csv_reader:
             policy_name = row['policy_name']
-            new_label = row['labels']
+            csv_labels = row['labels'].split('|')  # Split labels using "|" delimiter
             framework = row['compliance_framework']
             requirement_name = row['compliance_requirement']
             section_id = row['compliance_section']
-            status = row['status']
-            
+            status = row['status'].lower() == "true"  # Convert status to boolean
+
             # Find the policy by name in the existing policies
             matching_policy = None
             for policy in policies:
@@ -38,71 +41,75 @@ def update_policy_from_csv(base_url, token, csv_file_path):
             if matching_policy:
                 policy_id = matching_policy['policyId']
                 
-                # Step 1: Ensure compliance framework exists
-                compliance = create_if_not_exists_compliance_framework(base_url, token, framework, framework)
-                if not compliance:
-                    logger.error(f"Failed to create or find compliance framework '{framework}' for policy '{policy_name}'.")
-                    continue  # Skip to the next row
+                # Combine existing labels with new labels from CSV
+                existing_labels = matching_policy.get('labels', [])
+                updated_labels = list(set(existing_labels + csv_labels))  # Ensure no duplicates
                 
-                # Step 2: Ensure compliance requirement exists
-                requirement = create_if_not_exists_compliance_requirement(base_url, token, compliance['id'], requirement_name, "Requirement description", section_id)
-                if not requirement:
-                    logger.error(f"Failed to create or find compliance requirement '{requirement_name}' for policy '{policy_name}'.")
-                    continue  # Skip to the next row
-                
-                # Step 3: Ensure compliance section exists
-                section = create_if_not_exists_compliance_section(base_url, token, requirement['id'], section_id, "Section description")
-                if not section:
-                    logger.error(f"Failed to create or find compliance section '{section_id}' for policy '{policy_name}'.")
-                    continue  # Skip to the next row
-                
-                logger.error(f"=================================> compliance = '{compliance}'")
-                logger.error(f"=================================> requirement = '{requirement}'")
-                logger.error(f"=================================> section = '{section}'")
-
-                # Prepare the updated compliance metadata
-                compliance_metadata = matching_policy.get('complianceMetadata', [])
-
-                # Check if the section['id'] already exists in compliance metadata
-                section_exists = False
-                for metadata in compliance_metadata:
-                    if metadata['sectionId'] == section['sectionId']:
-                        section_exists = True
-                        break
-                # Add new compliance metadata only if section does not exist
-                if not section_exists:
-                    compliance_metadata.append({
-                        "complianceId": section['id'],
-                        "customAssigned": True,
-                        "policyId": policy_id,
-                        "requirementDescription": requirement['description'],
-                        "requirementId": requirement['requirementId'],
-                        "requirementName": requirement['name'],
-                        "sectionDescription": section['description'],
-                        "sectionId": section['sectionId'],
-                        "sectionLabel": section['sectionId'],
-                        "standardDescription": compliance['description'],
-                        "standardId": compliance['id'],
-                        "standardName": compliance['name']
-                    })
-                else:
-                    logger.info(f"Section '{section['sectionId']}' already exists in compliance metadata for policy '{policy_name}', skipping append.")
-                
-                               
-                # Prepare the updated policy data
+                # Prepare the updated policy data (without compliance metadata yet)
                 updated_policy = {
                     "cloudType": matching_policy['cloudType'],
-                    "complianceMetadata": compliance_metadata,
                     "description": matching_policy['description'],
-                    "enabled": status,
+                    "enabled": status,  # Update policy status from CSV
                     "findingTypes": matching_policy['findingTypes'],
-                    "labels": [new_label],  # Add new label from CSV
+                    "labels": updated_labels,  # Updated labels array
                     "name": matching_policy['name'],
                     "policyType": matching_policy['policyType'],
                     "recommendation": matching_policy['recommendation'],
                     "severity": matching_policy['severity'],
                     "rule": matching_policy['rule'],
                 }
+                
+                # Only update compliance metadata for allowed policy types
+                if matching_policy['policyType'] in allowed_policy_types:
+                    # Step 1: Ensure compliance framework exists
+                    compliance = create_if_not_exists_compliance_framework(base_url, token, framework, framework)
+                    if not compliance:
+                        logger.error(f"Failed to create or find compliance framework '{framework}' for policy '{policy_name}'.")
+                        continue  # Skip to the next row
+                    
+                    # Step 2: Ensure compliance requirement exists
+                    requirement = create_if_not_exists_compliance_requirement(base_url, token, compliance['id'], requirement_name, "Requirement description", section_id)
+                    if not requirement:
+                        logger.error(f"Failed to create or find compliance requirement '{requirement_name}' for policy '{policy_name}'.")
+                        continue  # Skip to the next row
+                    
+                    # Step 3: Ensure compliance section exists
+                    section = create_if_not_exists_compliance_section(base_url, token, requirement['id'], section_id, "Section description")
+                    if not section:
+                        logger.error(f"Failed to create or find compliance section '{section_id}' for policy '{policy_name}'.")
+                        continue  # Skip to the next row
+                    
+                    # Get existing compliance metadata
+                    compliance_metadata = matching_policy.get('complianceMetadata', [])
+                    
+                    # Check if the section['id'] already exists in compliance metadata
+                    section_exists = False
+                    for metadata in compliance_metadata:
+                        if metadata['sectionId'] == section['sectionId']:
+                            section_exists = True
+                            break
+
+                    # Add new compliance metadata only if section does not exist
+                    if not section_exists:
+                        compliance_metadata.append({
+                            "complianceId": section['id'],
+                            "customAssigned": True,
+                            "policyId": policy_id,
+                            "requirementDescription": requirement['description'],
+                            "requirementId": requirement['requirementId'],
+                            "requirementName": requirement['name'],
+                            "sectionDescription": section['description'],
+                            "sectionId": section['sectionId'],
+                            "sectionLabel": section['sectionId'],
+                            "standardDescription": compliance['description'],
+                            "standardId": compliance['id'],
+                            "standardName": compliance['name']
+                        })
+                    else:
+                        logger.info(f"Section '{section['sectionId']}' already exists in compliance metadata for policy '{policy_name}', skipping append.")
+                    
+                    # Add compliance metadata to the policy if the policyType supports it
+                    updated_policy["complianceMetadata"] = compliance_metadata
                 
                 # Send the PUT request to update the policy
                 update_url = f"https://{base_url}/policy/{policy_id}"
@@ -116,9 +123,7 @@ def update_policy_from_csv(base_url, token, csv_file_path):
                     response = requests.put(update_url, headers=headers, json=updated_policy)
                     response.raise_for_status()
                     logger.info(f"Policy '{policy_name}' updated successfully.")
-                except requests.exceptions.RequestException as err:                
-                    logger.debug(f"Response status code: {response.status_code}")
-                    logger.debug(f"Response headers: {response.headers}")    
+                except requests.exceptions.RequestException as err:
                     logger.error(f"Failed to update policy '{policy_name}': {err}")
             else:
                 logger.error(f"Policy '{policy_name}' not found in existing policies.")
@@ -369,7 +374,6 @@ def login_compute(base_url, access_key, secret_key):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-f", "--framework", help="Name of the framework.",required=True)
     parser.add_argument("-a", "--amount", help="The number of unit to generate the report.", default=1)
     parser.add_argument("-l", "--limit", help="Number of maximum email send", default=0)
     parser.add_argument("--debug", action="store_true", help="Enable debug logging.")
@@ -399,8 +403,6 @@ def main():
     identity = os.environ.get("PRISMA_ACCESS_KEY")
     secret = os.environ.get("PRISMA_SECRET_KEY")
     limit = args.limit
-    framework = args.framework
-    json_file = 'policies.json'
 
     if not url or not identity or not secret:
         logger.error("PRISMA_API_URL, PRISMA_ACCESS_KEY, PRISMA_SECRET_KEY, GITHUB_TOKEN variables are not set.")
@@ -420,21 +422,7 @@ def main():
     except ValueError:
         raise ValueError("Limit must be a valid integer.")
     
-    update_policy_from_csv(url, token, "policies.csv")
-
-    # compliance = create_if_not_exists_compliance_framework(url, token, framework, framework)
-    # logger.info(f"======================= {compliance['id']} =======================")
-    
-    # requirement = create_if_not_exists_compliance_requirement(url,token,compliance['id'],"First Req", "Req Description", "ID1" )
-
-    # section = create_if_not_exists_compliance_section(url,token,requirement['id'], "ID001", "Desctiion Section")
-    # logger.info(f"======================= {section} =======================")
-    
-
-    # policies = get_policies(url, token)
-    # # Write the policies into the JSON file
-    # with open(json_file, 'w') as file:
-    #     json.dump(policies, file, indent=4) 
+    update_policy_from_csv(url, token, "matched_policies.csv")
     
 
     logger.info("======================= END =======================")

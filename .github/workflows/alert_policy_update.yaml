@@ -9,6 +9,13 @@ env:
   PRISMA_API_URL: ${{ secrets.PRISMA_API_URL }}
   PRISMA_ACCESS_KEY: ${{ secrets.PRISMA_ACCESS_KEY }}
   PRISMA_SECRET_KEY: ${{ secrets.PRISMA_SECRET_KEY }}
+  AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  # Email Settings
+  SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+  RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
 
 jobs:
   sync:
@@ -29,4 +36,4 @@ jobs:
 
       - name: 
         run: |
-          python policy_mapper.py --debug
+          python alert_policy_update.py --hours 24

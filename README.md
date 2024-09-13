@@ -70,10 +70,11 @@ RECIPIENT_EMAIL=<recipient_email_address>
 This script sends an email with a list of policies that were created or updated in the last 24 hours (or a parameterized time window).
 
 ```bash
-python alert_policy_update.py --days <number_of_days>
+python alert_policy_update.py --hours <number_of_hours> --cloud aws --cloud azure
 ```
 
-`--days`: Optional. Specifies the time window in days. Default is 1 (24 hours).
+`--hours`: Optional. Specifies the time window in days. Default is 1 (24 hours).
+`--cloud`: Optional. Choose the CSP of your interest: 'aws', 'azure', 'gcp', 'alibaba_cloud', 'oci'.
 
 #### 2. policy_mapper.py
 This script maps Prisma Cloud policies to AWS Foundational Security Best Practices (FSBP) or other frameworks using fuzzy matching and compliance metadata.

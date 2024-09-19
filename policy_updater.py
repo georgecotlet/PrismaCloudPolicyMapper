@@ -85,7 +85,7 @@ def update_policy_from_csv(base_url, token, csv_file_path):
                     # Check if the section['id'] already exists in compliance metadata
                     section_exists = False
                     for metadata in compliance_metadata:
-                        if metadata['sectionId'] == section['sectionId']:
+                        if metadata['sectionId'] == section['sectionId'] and compliance['name'] ==  metadata['standardName'] and requirement['name'] == metadata['requirementName']:
                             section_exists = True
                             break
 

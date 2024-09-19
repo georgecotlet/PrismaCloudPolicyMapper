@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import logging
+import argparse
 
 # Set up logging
 logger = logging.getLogger()
@@ -72,7 +73,7 @@ def find_best_compliance_match(compliance_metadata):
     return best_compliance_requirement, best_compliance_section
 
 # Map policies to compliance requirement and section using complianceMetadata
-def map_to_compliance(matched_policies, prisma_policies):
+def map_to_compliance(matched_policies, prisma_policies, compliance_framework):
     compliance_data = []
     
     for framework_policy, prisma_policy_name in matched_policies.items():
@@ -89,7 +90,7 @@ def map_to_compliance(matched_policies, prisma_policies):
         compliance_data.append({
             "policy_name": f'"{prisma_policy_name}"',
             "labels": '"FSBP"',
-            "compliance_framework": '"AWS Foundational Security Best Practices standard"',
+            "compliance_framework": f'"{compliance_framework}"',
             "compliance_requirement": f'"{compliance_requirement}"',
             "compliance_section": f'"{compliance_section}"',
             "status": "true"
@@ -120,6 +121,12 @@ def get_policies(base_url, token):
     response_json = response.json()
     return response_json
 
+# Filter policies by cloud_type and policy_type
+def filter_policies(prisma_policies, cloud_type, policy_type):
+    return [
+        policy for policy in prisma_policies
+        if policy['cloudType'].lower() == cloud_type.lower() and policy_type in policy['policySubTypes']
+    ]
 
 def login_saas(base_url, access_key, secret_key):
     url = f"https://{base_url}/login"
@@ -136,11 +143,29 @@ def login_saas(base_url, access_key, secret_key):
 
 def main():   
     load_dotenv()
+
+    # Argument parser for cloud_type, policy_type, and file paths
+    parser = argparse.ArgumentParser(description='Map policies with compliance.')
+    parser.add_argument('--cloud-type', required=True, help='Filter by cloud type (e.g., aws, azure).')
+    parser.add_argument('--policy-type', required=True, help='Filter by policy type (e.g., run, build).')
+    parser.add_argument('--framework-csv-file', required=True, help='CSV file containing the framework policies.')
+    parser.add_argument('--compliance-framework', required=True, help='Compliance framework name (e.g., "AWS Foundational Security Best Practices standard").')
+    parser.add_argument('--output-csv-file', required=True, help='CSV file for outputting the mapped policies.')
+    parser.add_argument('--threshold', default=50, help='Threshold for the fuzzy search')
+    args = parser.parse_args()
     
-    # File paths
-    framework_csv_file = 'fsbp.csv'
-    output_csv_file = 'matched_policies.csv'    
-    
+    cloud_type_filter = args.cloud_type
+    policy_type_filter = args.policy_type
+    framework_csv_file = args.framework_csv_file
+    output_csv_file = args.output_csv_file
+    compliance_framework = args.compliance_framework
+
+    try:
+        threshold = int(args.threshold)
+    except ValueError:
+        print(f"Error: Invalid threshold value '{args.threshold}'. It must be a valid integer.")
+        threshold = 60  # You can set a default value or handle it as per your needs
+
     # Load environment variables
     base_url = os.getenv("PRISMA_API_URL")
     token = os.getenv("PRISMA_ACCESS_KEY")
@@ -153,15 +178,18 @@ def main():
     # Fetch policies
     token = login_saas(base_url, token, secret)
     prisma_policies = get_policies(base_url, token)
+
+    # Filter policies by cloud_type and policy_type
+    prisma_policies = filter_policies(prisma_policies, cloud_type_filter, policy_type_filter)
     
-    # Load policies
+    # Load framework policies
     framework_policies = load_framework_policies(framework_csv_file)
     
     # Perform fuzzy matching
-    matches, unmatched = match_policies(framework_policies, prisma_policies)
+    matches, unmatched = match_policies(framework_policies, prisma_policies, threshold)
 
     # Map to compliance requirement and section using complianceMetadata
-    compliance_data = map_to_compliance(matches, prisma_policies)
+    compliance_data = map_to_compliance(matches, prisma_policies, compliance_framework)
 
     # Write the compliance data to CSV
     write_to_csv(compliance_data, output_csv_file)

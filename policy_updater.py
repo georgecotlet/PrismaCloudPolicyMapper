@@ -24,11 +24,11 @@ def update_policy_from_csv(base_url, token, csv_file_path):
         csv_reader = csv.DictReader(file)
         
         for row in csv_reader:
-            policy_name = row['policy_name']
-            csv_labels = row['labels'].split('|')  # Split labels using "|" delimiter
-            framework = row['compliance_framework']
-            requirement_name = row['compliance_requirement']
-            section_id = row['compliance_section']
+            policy_name = row['policy_name'].strip('"')
+            csv_labels = row['labels'].strip('"').split('|')  # Split labels using "|" delimiter
+            framework = row['compliance_framework'].strip('"')
+            requirement_name = row['compliance_requirement'].strip('"')
+            section_id = row['compliance_section'].strip('"')
             status = row['status'].lower() == "true"  # Convert status to boolean
 
             # Find the policy by name in the existing policies

@@ -80,7 +80,7 @@ python alert_policy_update.py --hours <number_of_hours> --cloud aws --cloud azur
 This script maps Prisma Cloud policies to AWS Foundational Security Best Practices (FSBP) or other frameworks using fuzzy matching and compliance metadata.
 
 ```bash
-python policy_mapper.py
+python policy_mapper.py --cloud-type aws --policy-type run --framework-csv-file fsbp.csv --compliance-framework "CUSTOM - AWS Foundational Security Best Practices standard" --output-csv-file matched_policies.csv --threshold 50
 ```
 
 The output is a CSV file (matched_policies.csv) containing matched policies, compliance requirements, and sections.

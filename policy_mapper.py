@@ -100,11 +100,15 @@ def map_to_compliance(matched_policies, prisma_policies, compliance_framework):
 
 # Write the results to a CSV file
 def write_to_csv(compliance_data, output_file):
+    seen_policies = set()  # Set to store unique policy names
     with open(output_file, mode='w', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=["policy_name", "labels", "compliance_framework", "compliance_requirement", "compliance_section", "status"])
         writer.writeheader()
         for row in compliance_data:
-            writer.writerow(row)
+            policy_name = row['policy_name']
+            if policy_name not in seen_policies:  # Check if policy_name is unique
+                writer.writerow(row)
+                seen_policies.add(policy_name)  # Add the policy_name to the set once written
 
 # Function to fetch policies
 def get_policies(base_url, token):

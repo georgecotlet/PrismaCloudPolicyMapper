@@ -13,7 +13,7 @@ env:
   PRISMA_SECRET_KEY: ${{ secrets.PRISMA_SECRET_KEY }}
 
 jobs:
-  sync:
+  update_prisma_cloud_policies:
 
     runs-on: ubuntu-latest
 

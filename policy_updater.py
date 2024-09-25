@@ -110,7 +110,7 @@ def update_policy_from_csv(base_url, token, csv_file_path):
                     
                     # Add compliance metadata to the policy if the policyType supports it
                     updated_policy["complianceMetadata"] = compliance_metadata
-                
+    
                 # Send the PUT request to update the policy
                 update_url = f"https://{base_url}/policy/{policy_id}"
                 headers = {

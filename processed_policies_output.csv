@@ -1,0 +1,144 @@
+policy_name,labels,compliance_framework,compliance_requirement,compliance_section,status
+"""AWS account security contact information is not set""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS Certificate Manager (ACM) has certificates expiring in 30 days or less""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS Certificate Manager (ACM) RSA certificate key length less than 2048""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS API Gateway REST API execution logging disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS API Gateway REST API not configured with AWS Web Application Firewall v2 (AWS WAFv2)""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""API protection""",true
+"""AWS API gateway request authorisation is not set""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS AppSync has field-level logging disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS AppSync GraphQL API is authenticated with API key""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS Auto Scaling group launch configuration not configured with Instance Metadata Service v2 (IMDSv2)""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure development""",true
+"""AWS Auto Scaling group launch configuration has public IP address assignment enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS CloudFront distributions does not have a default root object configured""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS CloudFront viewer protocol policy is not configured with HTTPS""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS CloudFront distribution with access logging disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS CloudFront web distribution with AWS Web Application Firewall (AWS WAF) service disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""API protection""",true
+"""AWS CloudFront web distribution with default SSL certificate""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS CloudFront origin protocol policy does not enforce HTTPS-only""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS CloudFront distribution is using insecure SSL protocols for HTTPS communication""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS Cloudfront Distribution with S3 have Origin Access set to disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS CloudTrail is not enabled on the account; AWS CloudTrail logging is disabled; AWS CloudTrail is not enabled with multi trail and not capturing all management events""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS CloudTrail logs are not encrypted using Customer Master Keys (CMKs)""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS CloudTrail log validation is not enabled in all regions""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS CloudTrail trail logs is not integrated with CloudWatch Log; AWS CloudTrail logs should integrate with CloudWatch for all regions""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS CodeBuild project environment variables contain plaintext AWS credentials""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS CodeBuild project environment variables contain plaintext AWS credentials""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS CodeBuild project not configured with logging configuration""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS Config Recording is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Inventory""",true
+"""AWS Kinesis Firehose with Direct PUT as source has SSE encryption disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS DMS replication instance is publicly accessible""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS DMS replication instance automatic version upgrade disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure development""",true
+"""AWS DMS replication task for the target database have logging not set to the minimum severity level""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS DMS replication task for the source database have logging not set to the minimum severity level""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS DocumentDB clusters have backup retention period less than 7 days""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS DocumentDB cluster does not publish audit logs to CloudWatch Logs""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS ECR private repository tag mutable""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure development""",true
+"""AWS ECR Repository not configured with a lifecycle policy""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure development""",true
+"""AWS ECS services have automatic public IP address assignment enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS ECS task definition elevated privileges enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure development""",true
+"""AWS ECS task definition is not configured with read-only access to container root filesystems""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure development""",true
+"""AWS ECS task definition logging configuration disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS ECS Cluster with container insights feature disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Inventory""",true
+"""AWS Elastic File System (EFS) not encrypted using Customer Managed Key""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS Elastic File System (EFS) with encryption for data at rest is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS EKS cluster endpoint access publicly enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS EKS cluster using the default VPC""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS EKS cluster does not have secrets encryption enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS EKS control plane logging disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS ElastiCache Redis cluster is not configured with automatic backup""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS ElastiCache Redis cluster automatic version upgrade disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure development""",true
+"""AWS ElastiCache Redis cluster with Multi-AZ Automatic Failover feature set to disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS ElastiCache Redis cluster with encryption for data at rest disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS ElastiCache Redis with in-transit encryption disabled (Non-replication group)""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS ElastiCache Redis cluster with Redis AUTH feature disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS Elastic Beanstalk environment managed platform updates are not enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure development""",true
+"""AWS Elastic Beanstalk environment logging not configured""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS Application Load Balancer (ALB) is not configured to drop HTTP headers""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS Elastic Load Balancer (ELB) with access log disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS Elastic Load Balancer v2 (ELBv2) with deletion protection disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS Elastic Load Balancer (Classic) with cross-zone load balancing disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS Classic Load Balancer not configured to span multiple Availability Zones""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS Elastic Load Balancer v2 (ELBv2) with cross-zone load balancing disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS Elastic Load Balancer (Classic) with cross-zone load balancing disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS EMR Block public access setting disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS Elasticsearch domain Encryption for data at rest is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS Elasticsearch domain publicly accessible""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS Elasticsearch domain Encryption for data at rest is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS Elasticsearch domain Error logging disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS Elasticsearch domain audit logging disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS Elasticsearch domain has Dedicated master set to disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS Elasticsearch domain is not configured with HTTPS""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS EventBridge event bus with no resource-based policy attached""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS FSx for OpenZFS file systems not configured to copy tags to backups or volumes""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS GuardDuty detector is not enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Detect""","""Detection services""",true
+"""AWS IAM policy allows full administrative privileges""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS IAM policy attached to users""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS access keys are not rotated for 90 days""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS Access key enabled on root account""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS MFA not enabled for IAM users""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS root account configured with Virtual MFA""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS IAM Password policy is unsecure""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS IAM user has both Console access and Access Keys""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS IAM policy is overly permissive to all traffic via condition clause""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS Kinesis streams are not encrypted using Server Side Encryption""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS KMS Key scheduled for deletion""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS Lambda function URL AuthType set to NONE""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS Lambda nearing availability code storage limit""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure development""",true
+"""AWS Lambda function URL having overly permissive cross-origin resource sharing permissions""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS Macie is not enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Detect""","""Detection services""",true
+"""AWS MQ Broker is not encrypted by Customer Managed Key (CMK)""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure development""",true
+"""AWS MSK cluster encryption in transit is not enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS Neptune cluster deletion protection is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS Neptune DB cluster does not publish audit logs to CloudWatch Logs""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS Neptune cluster deletion protection is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS Network Firewall is not configured with logging configuration""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS Network Firewall delete protection is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS OpenSearch domain Encryption for data at rest is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS OpenSearch attached security group overly permissive to all traffic""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS OpenSearch node-to-node encryption is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS Opensearch domain Error logging disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS Opensearch domain audit logging disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS OpenSearch Fine-grained access control is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS Elasticsearch domain is not configured with HTTPS""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS OpenSearch domain does not have the latest service software version""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure development""",true
+"""AWS Private CA root certificate authority is enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS Route53 public Hosted Zone query logging is not enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS RDS snapshots are accessible to public""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS RDS database instance is publicly accessible""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS RDS database not encrypted using Customer Managed Key""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS RDS Snapshot with access for unmonitored cloud accounts""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS RDS instance with Multi-Availability Zone disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS RDS cluster delete protection is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS RDS instance delete protection is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS RDS instance not configured with IAM authentication""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS RDS instance not configured with IAM authentication""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS RDS instance without Automatic Backup setting""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS RDS cluster not configured with IAM authentication""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS RDS minor upgrades not enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure development""",true
+"""AWS RDS cluster not in private subnet""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS RDS instance with copy tags to snapshots disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Resilience""",true
+"""AWS RDS DB cluster encryption is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS Redshift cluster instance with public access setting enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS Redshift database does not have audit logging enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS Redshift cluster with commonly used master username and public access setting enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS Redshift instances are not encrypted""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS S3 Buckets Block public access setting disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS S3 bucket publicly readable""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS S3 bucket publicly writable""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS S3 bucket policy does not enforce HTTPS request only""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS S3 bucket accessible to unmonitored cloud accounts""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS S3 bucket is not configured with MFA Delete""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS Access logging not enabled on S3 buckets""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS S3 bucket has global view ACL permissions enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS S3 access point Block public access setting disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS SageMaker notebook instance configured with direct internet access feature""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS SageMaker notebook instance is not placed in VPC""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure network configuration""",true
+"""AWS SageMaker notebook instance with root access enabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS Secrets Manager secret not configured to rotate within 90 days""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS Secrets Manager secret not used for more than 90 days""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS Secrets Manager secret not used for more than 90 days""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS Secrets Manager secret not configured to rotate within 90 days""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS SQS Queue not configured with server side encryption""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Data protection""",true
+"""AWS SSM documents are public""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Protect""","""Secure access management""",true
+"""AWS Step Function state machines logging disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true
+"""AWS Web Application Firewall (AWS WAF) Classic logging is disabled""","""FSBP""","""CUSTOM - AWS Foundational Security Best Practices standard""","""Identify""","""Logging""",true

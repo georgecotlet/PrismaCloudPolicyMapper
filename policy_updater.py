@@ -377,7 +377,7 @@ def main():
     parser.add_argument("--debug", action="store_true", help="Enable debug logging.")
     args = parser.parse_args()
 
-    input_csv_file = 'matched_policies_new.csv'    
+    input_csv_file = 'processed_policies_output.csv'    
     if args.debug:
         logging_level = logging.DEBUG
     else:
